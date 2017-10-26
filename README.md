@@ -136,7 +136,7 @@ kuchinawa.Main class has three instance method to help users make a program.
 #### 2-3-0. `call`
 This method exists to support a thread-safe way to call a function of a widget on the user interface. The following figure shows an overview of how Kuchinawa works.
 
-![Overview of Kuchinawa](https://github.com/threemeninaboat3247/kuchinawa/blob/master/screenshot.png)
+![Overview of Kuchinawa](https://github.com/threemeninaboat3247/kuchinawa/blob/master/overview.png)
 
 Your code is executed in another thread where the user interface does not live. Since Qt's widgets are not thread-safe objects, you are not allowed to call their functions directly from another thread. `call` method exists to solve this problem. The usage (doc string) is as follows.
 ```python
