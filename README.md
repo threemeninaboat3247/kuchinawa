@@ -61,7 +61,9 @@ class Sample(Main):
         g_sin=self.addGraph(Graph.ScatterAll,(T,'sec',Sin,'V'),{'color':COLORS[0]},'Sin')
         g_cos=self.addGraph(Graph.ScatterAll,(T,'sec',Cos,'V'),{'color':COLORS[1]},'Cos')
         g_orbit=self.addGraph(Graph.ScatterAll,(Cos,'V',Sin,'V'),{'color':COLORS[2]},'Orbit')
+
         timeOrigin=datetime.now() #get the origin of time
+
         while True:
             t=(datetime.now()-timeOrigin).total_seconds() #get an elapsed time from the origin of time
 
@@ -70,15 +72,18 @@ class Sample(Main):
                 self.call(self.ui.noise_sin.value)*np.random.rand() #
             cos=self.call(self.ui.amp_cos.value)*np.cos(t+np.pi*self.call(self.ui.dial_cos.value)/180)+\
                 self.call(self.ui.noise_cos.value)*np.random.rand()
+
             #display the calculated values to the LCD displays on the user interface
             self.call(self.ui.lcdNumber_sin.display,(sin,))
             self.call(self.ui.lcdNumber_cos.display,(cos,))
+
             #Plot values to graphs　via graph instances. It depends on the implementation of a graph class how to send data to the graph, that is,
             #what you hand to 'kuchinawa.Graph.GraphInterface.put' method. In case of kuchinawa.Graph.ScatterAll, users send data
             #represented as a dict. The values of key 'x' and 'y' are the x and y coordinate of a data point respectively.
             g_sin.put({'x':t,'y':sin})
             g_cos.put({'x':t,'y':cos})
             g_orbit.put({'x':cos,'y':sin})
+						
             #Write data to the file by handing a dict to 'write_data' method of the file instance.
             #A value is written to the column which has the same header with the key.
             data={T:t,Sin:sin,Cos:cos}
