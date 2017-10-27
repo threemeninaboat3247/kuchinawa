@@ -83,7 +83,7 @@ class Sample(Main):
             g_sin.put({'x':t,'y':sin})
             g_cos.put({'x':t,'y':cos})
             g_orbit.put({'x':cos,'y':sin})
-						
+
             #Write data to the file by handing a dict to 'write_data' method of the file instance.
             #A value is written to the column which has the same header with the key.
             data={T:t,Sin:sin,Cos:cos}
@@ -204,4 +204,4 @@ This method opens a file dialog and returns a file instance which can be used to
 This class is a base class for various graph drawing. You can make a new graph class by inheriting this class and give to `addGraph` method's first argument. An instance of this class has an attribute named `que` which can be accessed by `self.que` in an instance method. If you put data to a graph instance of this class via `kuchinawa.Graph.GraphInterface`, the data is stacked to `que`. This class also has `update` method which is called at regular time intervals. So you can implement you own graph drawing by over-riding this method. See the code of `kuchinawa.Graph.ScatterAll` as an example.
 
 ## 3. Future work
-I made this package to support creating control programs for scientific measurements in my reasearch. As you can see, the total code is still quite small and there is much room for improvement. I am going to continue developing this package over a long span. I am happy to get your comment or advise about this package. Please [ contact me](<threemeninaboat3247@gmail.com>).
+I made this package to support creating control programs for scientific measurements in my reasearch. As you can see, the total code is still quite small and there is much room for improvement. I am going to continue developing this package over a long span. I am happy to get your comment or advise about this package. Please [ contact me](<mailto:threemeninaboat3247@gmail.com>).
