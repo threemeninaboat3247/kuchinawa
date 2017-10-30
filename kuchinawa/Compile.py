@@ -25,7 +25,7 @@ def compileUi(path):
         if result==None:
             raise Exception('Input file must be a file with the extension .ui')
         else:
-            n_path=path.rstrip('.ui')+'.py'
+            n_path=path.rstrip('.ui')+'_ui.py'
             with open(n_path,'w') as o:
                  uic.compileUi(i,o)
     print('Compiled \''+path+'\' to \''+n_path+'\'')
