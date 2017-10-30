@@ -3,6 +3,7 @@ This package help you to create a control program for measurement instruments. I
 
 
 ## 0. Installation
+__Currently it works on windows (32, 64bit) only.__ 
 
 	conda install -c threemeninaboat3247 kuchinawa
 
