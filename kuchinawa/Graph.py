@@ -7,6 +7,7 @@ Created on Sat Sep  2 20:32:27 2017
 import sys,threading
 
 from abc import abstractmethod
+import multiprocessing
 from multiprocessing import Process,Queue
 
 from PyQt5.QtWidgets import QApplication,QMainWindow,QDockWidget,QDesktopWidget
@@ -345,6 +346,3 @@ def initGraphContainer(que):
     app = QApplication(sys.argv)
     gc=GraphContainer(que)
     app.exec_()
-        
-if __name__=='__main__':
-    pass

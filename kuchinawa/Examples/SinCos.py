@@ -50,7 +50,7 @@ class Sample(Main):
         g_cos=self.addGraph(Graph.ScatterAll,(T,'sec',Cos,'V'),{'color':COLORS[1]},'Cos')
         g_orbit=self.addGraph(Graph.ScatterAll,(Cos,'V',Sin,'V'),{'color':COLORS[2]},'Orbit')
         timeOrigin=datetime.now() #get the origin of time
-        while True:
+        while self.running==True:
             t=(datetime.now()-timeOrigin).total_seconds() #get an elapsed time from the origin of time
             
             #振幅、位相、ノイズをユーザインタフェース上のウィジットから取得して時間に対するsin,cosを計算する
@@ -78,6 +78,8 @@ class Sample(Main):
             time.sleep(0.01)
 
 if __name__ == '__main__':
+    import multiprocessing
+    multiprocessing.set_start_method('spawn')
     app = QApplication(sys.argv)
     s=Sample()
     sys.exit(app.exec_())       
