@@ -60,6 +60,7 @@ class Main(QThread):
         super().__init__()
         self.__initUI()
         self.finished.connect(self.__finalize)
+        self.running=False #a flag which determins whether run method ends or not
         
         self.que=Queue() #connect between main and graph drawing process
         self.p=Process(target=Graph.initGraphContainer,args=(self.que,))
@@ -115,17 +116,20 @@ class Main(QThread):
     def __exePressed(self):
         self.toolbar.setState(MyToolBar.RUNNING)
         self.__resetGraphs()
+        self.running=True
         self.start()
         
     def __exitPressed(self):
+        self.__stopPressed()
         self.que.put(Graph.PoisonPill())
         del(self.mw)
         
     def __stopPressed(self):
-        super().terminate()
+        self.running=False
         
     def __finalize(self):
         self.toolbar.setState(MyToolBar.READY)
+        self.running=False
         
     def call(self,function,args=None,kwargs=None):
         '''
