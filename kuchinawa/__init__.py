@@ -13,7 +13,8 @@ KUCHINAWA='Kuchinawa'
 
 def run_sample():
     from PyQt5.QtWidgets import QApplication
-    import sys
+    import sys,multiprocessing
+    multiprocessing.set_start_method('spawn')
     from kuchinawa.Examples import SinCos
     app = QApplication([])
     s=SinCos.Sample()
