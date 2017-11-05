@@ -11,7 +11,7 @@ long_description = 'This package help you to create a control program for measur
 
 setup(
     name  = 'kuchinawa',
-    version = '0.2',
+    version = '0.3',
     description = 'Support for creating a control program for measurement instruments',
     long_description = long_description,
     license = 'MIT',
