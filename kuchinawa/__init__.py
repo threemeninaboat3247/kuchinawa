@@ -9,8 +9,6 @@ import os,sys
 from kuchinawa.Compile import compileUi
 from kuchinawa.Thread import Main
 
-import pdb
-pdb.set_trace()
 ENTRYPOINT=__path__[0]
 ICONPATH=os.path.join(ENTRYPOINT,'Icons','logo.png')
 KUCHINAWA='Kuchinawa'
