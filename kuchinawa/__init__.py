@@ -4,14 +4,14 @@ Created on Mon Oct 23 03:24:37 2017
 
 @author: Yuki
 """
-import os,sys
-
-from kuchinawa.Compile import compileUi
-from kuchinawa.Thread import Main
+import os,sys,logging
 
 ENTRYPOINT=__path__[0]
 ICONPATH=os.path.join(ENTRYPOINT,'Icons','logo.png')
 KUCHINAWA='Kuchinawa'
+
+from kuchinawa.Compile import compileUi
+from kuchinawa.Thread import Main
 
 #change the multiprocessing's context to 'spawn'
 try:

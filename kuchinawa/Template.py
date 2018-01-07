@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import multiprocessing
 import sys,time
 from datetime import datetime
 
@@ -23,7 +22,6 @@ class Sample(Main):
             pass
 
 if __name__ == '__main__':
-    multiprocessing.set_start_method('spawn')
     app = QApplication(sys.argv)
     s=Sample()
     sys.exit(app.exec_())       

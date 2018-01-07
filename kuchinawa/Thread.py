@@ -14,7 +14,7 @@ from PyQt5.QtWidgets import QToolBar,QAction,QMainWindow,QWidget,QApplication,\
                             QScrollArea,QFileDialog,QDesktopWidget
 from PyQt5.QtGui import QIcon                        
 
-from kuchinawa import Graph,File
+from kuchinawa import Graph,File,Setting_extend
 import kuchinawa
 
 class MyToolBar(QToolBar):
@@ -29,10 +29,12 @@ class MyToolBar(QToolBar):
         self.exeAction=QAction('Run', self)
         self.stopAction = QAction('Stop', self)
         self.debugAction = QAction('Debug', self)
+        self.settingAction=QAction('Settings',self)
         self.exitAction=QAction('Exit',self)
         self.addAction(self.exeAction)
         self.addAction(self.stopAction)
         self.addAction(self.debugAction)
+        self.addAction(self.settingAction)
         self.addAction(self.exitAction)
         
     def setState(self,end):
@@ -41,11 +43,13 @@ class MyToolBar(QToolBar):
             self.exeAction.setEnabled(True)
             self.stopAction.setEnabled(False)
             self.debugAction.setEnabled(True)
+            self.settingAction.setEnabled(True)
             self.exitAction.setEnabled(True)
         elif end==MyToolBar.RUNNING:
             self.exeAction.setEnabled(False)
             self.stopAction.setEnabled(True)
             self.debugAction.setEnabled(False)
+            self.settingAction.setEnabled(True)
             self.exitAction.setEnabled(True)
             
 
@@ -65,6 +69,7 @@ class Main(QThread):
         self.que=Queue() #connect between main and graph drawing process
         self.p=Process(target=Graph.initGraphContainer,args=(self.que,))
         self.p.start()
+        
         
         self.result=Queue() #queue to put a result of a function called in the thread in which itself exists
         self.__callSignal.connect(self.__call)
@@ -88,6 +93,7 @@ class Main(QThread):
         self.toolbar.exeAction.triggered.connect(self.__exePressed)
         self.toolbar.stopAction.triggered.connect(self.__stopPressed)
         self.toolbar.exitAction.triggered.connect(self.__exitPressed)
+        self.toolbar.settingAction.triggered.connect(self.__settingPressed)
         self.toolbar.setState(MyToolBar.READY)
         self.mw.addToolBar(self.toolbar)
         
@@ -123,6 +129,16 @@ class Main(QThread):
         self.__stopPressed()
         self.que.put(Graph.PoisonPill())
         del(self.mw)
+        
+    def __settingPressed(self):
+        try:
+            self.settingWindow.showNormal()
+        except:
+            self.settingWindow=QWidget()
+            self.settingUi=Setting_extend.My_Ui_Form()
+            self.settingUi.setupUi(self.settingWindow)
+            self.settingUi.make_interface()
+            self.settingWindow.show()
         
     def __stopPressed(self):
         self.running=False
@@ -221,8 +237,6 @@ class Main(QThread):
 
         
 if __name__ == '__main__':
-    import multiprocessing
-    multiprocessing.set_start_method('spawn')
     app = QApplication(sys.argv)
     t=Main()
     sys.exit(app.exec_())

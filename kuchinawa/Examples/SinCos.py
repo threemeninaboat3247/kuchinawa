@@ -46,6 +46,7 @@ class Sample(Main):
         #Generate graphs by using 'self.addGraph' and get graph instances. The first argument is the graph class to instantiate. 
         #This class must inherit kuchinawa.Graph.GraphBase. The second and third argument are 
         #a tuple and dict to be handed to the function as positional and keyword argument respectively.
+        #The fourth argument is the label of the graph in the GraphContainer.
         g_sin=self.addGraph(Graph.ScatterAll,(T,'sec',Sin,'V'),{'color':COLORS[0]},'Sin')
         g_cos=self.addGraph(Graph.ScatterAll,(T,'sec',Cos,'V'),{'color':COLORS[1]},'Cos')
         g_orbit=self.addGraph(Graph.ScatterAll,(Cos,'V',Sin,'V'),{'color':COLORS[2]},'Orbit')
@@ -78,8 +79,6 @@ class Sample(Main):
             time.sleep(0.01)
 
 if __name__ == '__main__':
-    import multiprocessing
-    multiprocessing.set_start_method('spawn')
     app = QApplication(sys.argv)
     s=Sample()
     sys.exit(app.exec_())       
