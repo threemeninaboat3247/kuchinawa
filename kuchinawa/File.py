@@ -23,6 +23,10 @@ class File():
     def close(self):
         self.file.close()
         
+    def save(self):
+        self.close()
+        self.file=open(self.path,'a+')
+        
     def write_comment(self,string):
         '''
         Add a comment to the head of the file
@@ -36,6 +40,7 @@ class File():
         '''
         if self._before_writing:
             self.file.write(self.comment+string+'\n')
+            self.save()
         else:
             raise Exception('Comments must be written before starting to write data')
     
@@ -54,6 +59,7 @@ class File():
             self.columns=pd.DataFrame(columns=mylist)
             self.columns.to_csv(self.file,sep=self.sep,index=False)
             self._before_writing=False
+            self.save()
         else:
             raise Exception('Headers are already written')
     
@@ -73,3 +79,4 @@ class File():
         else:
             row=self.columns.append(mydict,ignore_index=True)
             row.to_csv(self.file,sep=self.sep,index=False,header=False)
+            self.save()
