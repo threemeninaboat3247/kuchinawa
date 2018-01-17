@@ -18,7 +18,7 @@ setup(
     author = 'Yuki Arai',
     author_email = 'threemeninaboat3247@gmail.com',
     url = 'https://github.com/threemeninaboat3247/kuchinawa',
-    keywords = 'measurement','QtDesigner'
+    keywords = 'measurement',
     packages = find_packages(),
     package_data={
         # If any package contains *.txt or *.rst files, include them:

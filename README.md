@@ -3,9 +3,13 @@ This package help you to create a control program for measurement instruments. I
 
 
 ## 0. Installation
+For Anaconda users in Windows
 
 	conda install -c threemeninaboat3247 kuchinawa
 
+For the others (Windows, Linux, macOS)
+
+	pip install kuchinawa
 ## 1. Example
 Kuchinawa includes several sample programs. The following figure shows the screen shot when one of them is being executed. You can run it on your machine by typing the next commands in a python interpreter.
 
