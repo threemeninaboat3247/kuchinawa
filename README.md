@@ -118,8 +118,8 @@ if __name__ == '__main__':
     s=Sample()
     sys.exit(app.exec_())            
 ```
-<div id="usage"></div>
-## 3. 使い方
+
+## 3. 使い方 <div id="usage"></div>
 Kuchinawaを用いたプログラムの開発過程は二つの段階から成ります。一つがQtDesigner
 を用いたGUIの作成段階、そして残りが実際の処理のコーディングです。この項では実際のプログラムを作りながら一連の過程を説明します。作成するプログラムはある数XにGUI上から取得した値Yを加算するという処理をループするプログラムです。Xの初期値もGUI上から取得し、各ステップでのXの値をGUI上に表示しつつファイルとグラフにも出力することにします。また出力ファイルはファイルダイアログを出してユーザが指定できるようにし、指定したファイル名をGUI上に表示します。
 
@@ -300,8 +300,8 @@ self.call(self.ui.line_file.setText,(file.path,))
 # 取得した値をxに代入
 x=self.call(self.ui.spin_X_init.value)
 ```
-<div id="addGraph"></div>
-##### グラフの初期化　`self.addGraph`
+
+##### グラフの初期化　`self.addGraph` <div id="addGraph"></div>
 Kuchinawaではサードパーティー製モジュールの[pyqtgraph](http://www.pyqtgraph.org/documentation/)を用いてグラフ描画を行っています。現状では単純なX-Yプロットのグラフ(`kuchinawa.Graph.ScatterAll`)しかありませんが、ユーザは`kuchinawa.Graph.GraphBase`を継承したクラスを作ることで任意のグラフ描画を行うことができます。詳しくは[参考](#appendix)の項を参照して下さい。
 
 グラフを生成するには`addGraph`というメソッドを使います。DocStringは以下です。
@@ -386,8 +386,8 @@ file.write_data(data)
 ```python
 file.close()
 ```
-<div id="usage_end"></div>
-#### 　3.3.3 まとめ
+
+#### 　3.3.3 まとめ <div id="usage_end"></div>
 これまでに見てきたメソッドを使って[3.3の冒頭](#usage)で述べた処理を行うコードを以下に示します。複数回現れる文字列は定数宣言を使って見やすくしています。
 
 ```python
@@ -490,10 +490,9 @@ pyvisaは測定器によらない汎用的な通信を行うので、例えば�
 ## 5. 最後に
 最後まで読んで頂きありがとうございます。Kuchinawaはまだまだ未熟なパッケージであり、今後も開発を継続する予定です。ユーザからのフィードバックはパッケージの改善に繋がるだけでなく、我々のモチベーションを上げるためにも有用です。使ってみた結果改善して欲しい点や感想・質問等ありましたら、[こちら](https://github.com/threemeninaboat3247/kuchinawa/issues/1)から我々にメッセージを送って下さい。ただし主に土曜日、日曜日が開発者がKuchinawaに関する仕事をする曜日ですので、返信等が必要な場合は少し気長に待って下さい。
 
-<div id="appendix"></div>
-## 6. 参考
-<div id="mechanism"></div>
-### 6.0 プログラム実行の仕組み
+
+## 6. 参考 <div id="appendix"></div>
+### 6.0 プログラム実行の仕組み <div id="mechanism"></div>
 この項ではユーザがKuchinawaを使って書いたプログラムがどのように実行されて、GUIやグラフの描画が行われているのかを述べたいと思います。[使い方](#usage)の項で作成したプログラムを`python sample.py`で実行すると以下の図のような二つのプロセス（pythonにおける並列処理の単位）が生成されます。
 
 ![process](images/overview.png)
