@@ -1,18 +1,22 @@
 # -*- coding: utf-8 -*-
+
+""" --- Description ---
+    Module:
+        Setting_extend.py
+    Abstract:
+        A module for setting windows.
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
-Created on Tue Dec 12 12:36:24 2017
-
-@author: Yuki
-"""
-
-'''
-The widgets for the configure of Kuchinawa in the setting window 
-made by QtDesigner have names starting with 'config_'.
-'''
-
-from kuchinawa import Setting,Configure
-from PyQt5.QtWidgets import QComboBox,QSpinBox
+# Standard library imports
 from distutils.util import strtobool
+
+# Third party library imports
+from PyQt5.QtWidgets import QComboBox,QSpinBox
+
+# Local imports
+from kuchinawa import Setting,Configure
 
 class Configure_interface():
     PREFIX='config_'

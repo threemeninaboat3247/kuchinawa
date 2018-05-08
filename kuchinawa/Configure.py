@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Dec  4 00:58:12 2017
 
-@author: Yuki
+""" --- Description ---
+    Module:
+        Configure.py
+    Abstract:
+        A module for configure file.
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
+# Standard library imports
+import os,copy,pickle
+
+# Local imports
 import kuchinawa
 from kuchinawa import Logger
-import os,copy,pickle
 
 class Configure:
     _CONFIG_PATH=os.path.join(kuchinawa.ENTRYPOINT,'config.dump')

@@ -4,14 +4,14 @@ Created on Sat Sep  2 13:41:09 2017
 
 @author: Yuki
 """
+import sys,time
+from datetime import datetime
+
+import numpy as np
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QColor
 
 from kuchinawa import Main,Graph
-import sys,time
-from datetime import datetime
-import numpy as np
-
 #QtDesignerで作成した拡張子が.uiのファイルをコンパイルした拡張子が.pyのファイルをimportする　拡張子は含めない
 #import the file with the extension .py which was compiled from a file with extension .ui made by using QtDesigner. not include the extension.
 from kuchinawa.Examples import SinCos_ui
@@ -21,8 +21,6 @@ COLORS=[QColor(255,0,0),QColor(255,255,0),QColor(0,255,0)] #the colors of points
 T='time'
 Sin='sin'
 Cos='cos'
-
-
 
 class Sample(Main):
     def __init__(self):

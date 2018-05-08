@@ -1,12 +1,21 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep  2 16:00:00 2017
 
-@author: Yuki
+""" --- Description ---
+    Module:
+        Compile.py
+    Abstract:
+        A module for compiling a '*.ui' file to a '*.py' file.
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
-
-from PyQt5 import uic
+# Standard library imports
 import sys,os,shutil
+
+# Third party library imports
+from PyQt5 import uic
+
+# Local imports
 import kuchinawa.Template
 
 def compileUi(path):

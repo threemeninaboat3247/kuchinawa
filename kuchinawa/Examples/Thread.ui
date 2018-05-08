@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>778</width>
+    <height>790</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>481</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Thread1</string>
+   </property>
+   <widget class="QLCDNumber" name="lcd1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="digitCount">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button1">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>terminate</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="bar1">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>220</y>
+     <width>481</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Thread2</string>
+   </property>
+   <widget class="QLCDNumber" name="lcd2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="digitCount">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>terminate</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="bar2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>410</y>
+     <width>481</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Thread3</string>
+   </property>
+   <widget class="QLCDNumber" name="lcd3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>241</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="digitCount">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button3">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>20</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>terminate</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="bar3">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

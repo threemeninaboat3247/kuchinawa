@@ -1,10 +1,18 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Sep  5 11:33:04 2017
 
-@author: Jackson
+""" --- Description ---
+    Module:
+        File.py
+    Abstract:
+        A module for file output.
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
+# Standard library imports
 import sys
+
+# Third party library imports
 import pandas as pd
 
 class File():

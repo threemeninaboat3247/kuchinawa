@@ -1,20 +1,27 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep  2 20:32:27 2017
 
-@author: Yuki
+""" --- Description ---
+    Module:
+        Graph.py
+    Abstract:
+        A module for graph drawing.
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
+# Standard library imports
 import sys,threading
-
 from abc import abstractmethod
 import multiprocessing
 from multiprocessing import Process,Queue
 
+# Third party library imports
 from PyQt5.QtWidgets import QApplication,QMainWindow,QDockWidget,QDesktopWidget
 from PyQt5.QtCore import pyqtSignal,Qt,QThread,QTimer
 from PyQt5.QtGui import QIcon
 import pyqtgraph as pg
 
+# Local imports
 import kuchinawa
 
 class AddSignal:
@@ -59,7 +66,7 @@ class GraphInterface:
     '''
     A interface to plot data onto a graph in another process. An instance of this class holds Queue connected to GraphContainer.
     '''
-    Total=0
+    Total=0 # A class variable which holds the number of produced graphs
     def __init__(self,que,graph,name,*args,**kwargs):
         self.que=que
         self.identifier=GraphInterface.Total
@@ -72,7 +79,7 @@ class GraphInterface:
         
         Parameters:
             data: object
-                Any object can be given. It depends on the implementation of the graph class how the data is treated
+                Any object can be given. It depends on the implementation of the graph class how the data is treated.
         '''
         identified_data=DataSignal(self.identifier,data)
         self.que.put(identified_data)
@@ -298,6 +305,22 @@ class ScatterAll(GraphBase):
     Plot all data and highlight the latest point. Put a new data in a dict: {'x': x value,'y': y value}
     '''
     def __init__(self,xlabel,xunit,ylabel,yunit,color='w'):
+        '''
+        Parameters
+            xlabel: str
+                the x axis' label
+            xunit: str
+                the x axis' unit
+            ylabel: str
+                the y axis' label
+            yunit: str
+                the y axis's unit
+            color: str / PyQt5.QtGui.QColor
+            
+        Returns
+            None
+        '''
+        
         super().__init__()
         #Initialization of PlotItem
         self.xlabel=xlabel
@@ -316,6 +339,9 @@ class ScatterAll(GraphBase):
         #set markers at latest values if data lenght is not zero.
         
     def update(self):
+        '''
+        Pop data from self.que and plot them to the graph assuming that the data are a dictionary like {'x': x value,'y': y value}.
+        '''
         mylist=self.empty_que()
         if len(mylist)>0:
             xappended=[d['x'] for d in mylist]

@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Dec 10 00:25:28 2017
 
-@author: Yuki
+""" --- Description ---
+    Module:
+        Logger.py
+    Abstract:
+        A module for logging
+    Modified:
+        threemeninaboat3247 2018/04/30
+    ---    End      ---
 """
-
+# Standard library imports
 import logging
+
 logger = logging.getLogger('Kuchinawa Log')
  
 # ログレベルの設定
