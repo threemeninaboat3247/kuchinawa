@@ -302,6 +302,7 @@ x=self.call(self.ui.spin_X_init.value)
 ```
 
 ##### グラフの初期化　`self.addGraph`
+<div id="addGraph"></div>
 Kuchinawaではサードパーティー製モジュールの[pyqtgraph](http://www.pyqtgraph.org/documentation/)を用いてグラフ描画を行っています。現状では単純なX-Yプロットのグラフ(`kuchinawa.Graph.ScatterAll`)しかありませんが、ユーザは`kuchinawa.Graph.GraphBase`を継承したクラスを作ることで任意のグラフ描画を行うことができます。詳しくは[参考](#appendix)の項を参照して下さい。
 
 グラフを生成するには`addGraph`というメソッドを使います。DocStringは以下です。
