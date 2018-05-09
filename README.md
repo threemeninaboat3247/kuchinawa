@@ -1,4 +1,4 @@
-# Kuchinawa　朽縄　[English page is Here](./README_ENG.md)
+# Kuchinawa　朽縄　[English page is here](./README_ENG.md)
 Kuchinawaは物性研究を行う実験系研究室の大学院生によって作られたPythonパッケージです。測定系制御のためのプログラムを簡単かつ効率的に作成できるライセンスフリー、オープンソースの開発環境を構築することを目標としています。
 
 ## 0. 特徴
